@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simple Loans Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body class="container-fluid">
+    <br/>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Simple Loans Editor
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div id="app"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script src="app.js"></script>
+  <script>
+    const element = document.getElementById("app");
+    const app = Elm.SimpleLoansEditor.init({
+      node: element,
+      flags: {}
+    });
+  </script>
+</body>
+</html>

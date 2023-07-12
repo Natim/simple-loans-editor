@@ -1,0 +1,36 @@
+{
+  "name": "simple-loans-editor",
+  "version": "1.0.0",
+  "description": "Simple Loans Editor",
+  "scripts": {
+    "analyse": "elm-analyse",
+    "build": "npm run cleanup && npm run copy-assets && elm make src/SimpleLoansEditor.elm --output=build/app.js --optimize && uglifyjs build/app.js --compress 'pure_funcs=\"F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9\",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | uglifyjs --mangle --output build/app.min.js && mv build/app.min.js build/app.js",
+    "build-with-taeg": "npm run cleanup && npm run copy-assets && elm make src/SimpleLoansEditor.elm --output=build/app.js --optimize && uglifyjs build/app.js --compress 'pure_funcs=\"F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9\",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | uglifyjs --mangle --output build/app.min.js && mv build/app.min.js build/app.js",
+    "copy-assets": "rimraf build && mkdir build && cp -r public/* build",
+    "cleanup": "rimraf elm-stuff/",
+    "debug": "elm-live src/SimpleLoansEditor.elm --port=3000 --dir=public/ -- --output=public/app.js --debug",
+    "deploy": "npm run build-with-taeg && gh-pages --dist build/",
+    "live": "elm-live src/SimpleLoansEditor.elm --port=3000 --dir=public/ -- --output=public/app.js",
+    "test": "elm-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Natim/simple-loans-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Natim/simple-loans-editor/issues"
+  },
+  "homepage": "https://github.com/Natim/simple-loans-editor#readme",
+  "author": "Alma",
+  "license": "ISC",
+  "devDependencies": {
+    "elm": "^0.19.1-5",
+    "elm-analyse": "^0.16.5",
+    "elm-format": "^0.8.5",
+    "elm-live": "^4.0.2",
+    "elm-test": "^0.19.1-revision6",
+    "gh-pages": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "uglify-js": "^3.12.7"
+  }
+}

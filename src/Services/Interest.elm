@@ -18,7 +18,7 @@ optimal_interest_rate paymentPlan =
 
         planDurations =
             List.repeat installmentsCount 0
-                |> List.indexedMap (\i _ -> 7 * (i + 1))
+                |> List.indexedMap (\i _ -> 7 * i)
 
         f_sum x =
             List.map2
